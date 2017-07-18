@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base target="_top">
+</head>
+<body>
+New word: <input id="textarea" type="text" name="word"><br>
+<select id="myoptions">
+    <option value="temporal">Time</option>
+    <option value="operational">Action</option>
+    <option value="deontic">Obligation</option>
+</select>
+<button onclick="saveDict();">Save as a new word</button>
+</body>
+</html>
+
+<script>
+    function saveDict() {
+        // Process the user's response.
+        var choice = document.getElementById('myoptions').value;
+        var text = document.getElementById('textarea').value;
+
+        if (choice === 'temporal') {
+            google.script.run.writeOneRecord(text.toString(), 'temporal');
+            google.script.run.alert('Done!');
+        } else if (choice === 'operational') {
+            google.script.run.writeOneRecord(text.toString(), 'operational');
+            google.script.run.alert('Done!');
+        } else if (choice === 'deontic') {
+            google.script.run.writeOneRecord(text.toString(), 'deontic');
+            google.script.run.alert('Done!');
+        }
+    }
+</script>
+
+

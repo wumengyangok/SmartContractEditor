@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base target="_top">
+</head>
+<body>
+<select id="myoptions">
+</select>
+<button onclick='getSelected();'>Auto highlight selected word</button>
+<button onclick='deleteWord();'>Delete selected word</button>
+</body>
+</html>
+
+
+
+
+<script>
+    var text = [];
+    var option = [];
+    google.script.run.withSuccessHandler(onSuccess).getDictionary();
+
+    function onSuccess(s) {
+        var dict = s;
+        var rows = dict.split("/");
+
+        for (var i = 0; i < rows.length; i++) {
+            text[i] = rows[i].split(",")[0];
+            option[i] = rows[i].split(",")[1];
+        }
+        var select = document.getElementById('myoptions');
+
+        for(var i=0; i< option.length; i++){
+            select.options[i] = new Option(text[i], option[i]);  //new Option("Text", "Value")
+        }
+    }
+
+    function getSelected() {
+        var s = document.getElementById("myoptions").selectedIndex;
+        google.script.run.autoReg(text[s], option[s].toString());
+    }
+
+    function deleteWord() {
+        var s = document.getElementById("myoptions").selectedIndex;
+        google.script.run.deleteOneRecord(text[s]);
+    }
+</script>
+
