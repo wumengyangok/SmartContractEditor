@@ -1,27 +1,54 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta name="robots" content="noindex, nofollow">
-    <title>Classic editor replacing a textarea</title>
-    <script src="http://cdn.ckeditor.com/4.7.0/standard-all/ckeditor.js"></script>
+    <meta charset="UTF-8">
+    <title>buttons/custom_buttons</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <form action="../save_v2.php" method="post" >
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css"
+          rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.6.0/css/froala_editor.pkgd.min.css"
+          rel="stylesheet" type="text/css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.6.0/css/froala_style.min.css" rel="stylesheet"
+          type="text/css"/>
+</head>
 
-    <textarea cols="80" id="editor1" name="editor1" rows="10">
-    </textarea>
+<input id="file" type="file" multiple onchange="startRead()">
 
-        <p>
-            <input type="submit" value="Submit">
+<body>
+<div id="editor">
+    <div id='edit' style="margin-top: 30px;">
+        <p>(ii) Payments under this Agreement will be made on the due date for value on that date in the place of the
+            account specified in the relevant Confirmation or otherwise pursuant to this Agreement, in freely
+            transferable funds and in the manner customary for payments in the required currency. Where settlement is by
+            delivery (that is, other than by payment), such delivery will be made for receipt on the due date in the
+            manner customary for the relevant obligation unless otherwise specified in the relevant Confirmation or
+            elsewhere in this Agreement.
         </p>
-    </form>
+    </div>
+</div>
 
-    <script>
-        CKEDITOR.replace( 'editor1' );
-    </script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.js"></script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/xml/xml.min.js"></script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.6.0//js/froala_editor.pkgd.min.js"></script>
+
 </body>
+</html>
 
+
+<script src="js/index.js"></script>
+
+</body>
 </html>
